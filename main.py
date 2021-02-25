@@ -9,6 +9,8 @@ import sys
 # Importo pyperclip per la gestione della clipboard, xclip è una dipendenza necessaria
 import pyperclip
 
+import loremgenerator
+
 def print_hi(name):
     print(f'Hi, {name}')
 
