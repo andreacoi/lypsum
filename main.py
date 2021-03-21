@@ -11,19 +11,21 @@ import pyperclip
 
 import loremgenerator
 
+
 def print_hi(name):
     print(f'Hi, {name}')
 
+
 if __name__ == '__main__':
     for i, arg in enumerate(sys.argv):
-            if(i != 0):
-                if (arg == "-p"):
-                    print("print")
-                elif (arg == "-c"):
-                    print("copia nella clipboard")
-                elif (arg == "-g"):
-                    print("generate")
-                elif (arg == "-h" or "--help"):
-                    print("guida utente")
-                else:
-                    print("Argomento non valido. Usa -h o --help per ricevere istruzioni sul comando lypsum.")
+        if i != 0:
+            if arg == "-p":
+                print("print")
+            elif arg == "-c":
+                print("copia nella clipboard")
+            elif arg == "-g":
+                print("generate")
+            elif arg == "-h" or "--help":
+                print("guida utente")
+            else:
+                print("Argomento non valido. Usa -h o --help per ricevere istruzioni sul comando lypsum.")
