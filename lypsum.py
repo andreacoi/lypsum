@@ -15,16 +15,21 @@ import loremgenerator
 
 
 def lypsumstart(name):
-    variable = "ciao"
-    return variable
+    return args
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Lorem ipsum CLI generator.', add_help=False)
-    parser.add_argument('--paragraph', '-p', default='5', type=int, help='Set the number of paragraph to generate')
-    parser.add_argument('--single', '-s', action='store_false', default=argparse.SUPPRESS, help='Generate a single pseudorandom phrase')
-    parser.add_argument('--words', '-w', default='8', type=int, help='Set the number of words to generate')
-    parser.add_argument('-c', '--copy', action='store_false', default=argparse.SUPPRESS, help='Copy generated lorem ipsum to clipboard')
-    parser.add_argument('-v', '--verbose', action='store_false', default=argparse.SUPPRESS, help='Verbose mode')
+    parser.add_argument('--paragraph', '-p', default=argparse.SUPPRESS, action='Generator.pgenerator', type=int, help='Set the number of paragraph to generate')
+    parser.add_argument('--single', '-s', action='store_true', default=argparse.SUPPRESS, help='Generate a single pseudorandom phrase')
+    parser.add_argument('--words', '-w', default=argparse.SUPPRESS, type=int, help='Set the number of words to generate')
+    parser.add_argument('-c', '--copy', action='store_true', default=argparse.SUPPRESS, help='Copy generated lorem ipsum to clipboard')
+    parser.add_argument('-v', '--verbose', action='store_true', default=argparse.SUPPRESS, help='Verbose mode')
     parser.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS, help='Show this help message and exit.')
     args = parser.parse_args()
+
+
+    if (args.paragraph and args.single) or (args.paragraph and args.words) or (args.write and args.single):
+        print("cretaino")
+    else:
+        print(args)
