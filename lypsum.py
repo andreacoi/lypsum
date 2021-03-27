@@ -20,7 +20,10 @@ def lypsumstart(name):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('--help', default='gino', type=str, help='ginoginogino')
-    parser.add_argument('--arg2', default='ginopippo', type=str, help='test arg2')
+    parser = argparse.ArgumentParser(description='Lorem ipsum CLI generator.', add_help=False)
+    parser.add_argument('--paragraph', '-p', default='5', type=int, help='Set the number of paragraph to generate')
+    parser.add_argument('--single', '-s', action='store_false', default=argparse.SUPPRESS, help='Generate a single pseudorandom phrase')
+    parser.add_argument('--words', '-w', default='8', type=int, help='Set the number of words to generate')
+    parser.add_argument('-v', '--verbose', action='store_false', default=argparse.SUPPRESS, help='Verbose mode')
+    parser.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS, help='Show this help message and exit.')
     args = parser.parse_args()
